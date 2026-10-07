@@ -1,26 +1,68 @@
-# JSP-000479 — Ordinal Ramsey (Schmerl-Specker / Specker 1957)
+# JSP-000479 — Lean 4.20 scaffold for Does every red-blue coloring of pairs from the pre...
 
-## Problem
-Does every red-blue coloring of pairs from the prescribed countable ordinal
-contain a red clique of the same order type or a blue triangle?
+> **Problem (upstream JSP-000479)**: Does every red-blue coloring of pairs from the prescribed countable ordinal contain a red clique of the same order type or a blue triangle?
+> **Solver**: Schimmerling (2010, Ann. Pure Appl. Logic 1195-1215)
+> **JSP bounty**: USD $250
+> **Upstream status** ([TheJustinSunPrize/awards](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0401-0500.md#JSP-000479)): **Solved, Lean proof: No, Eligible to claim: No**
 
-Reference: Specker 1957 (Comment. Math. Helv. 1957, 302-314) and Schmerl 2010
-(Ann. Pure Appl. Logic 2010, 1195-1215).
+## What this repository is
 
-## Why ordinal Ramsey matters
-The classical Specker 1957 result shows that every 2-coloring of the pairs of
-ω² (or the right ordinal) contains either a red clique of the same order
-type or a blue triangle. This is one of the foundational results of ordinal
-Ramsey theory.
+This is a **Lean 4.20.0 + Mathlib v4.20.0 scaffold** for the JSP outer theorem.
+The file structure (lake project, lean-toolchain, lakefile, single `JSP479.lean`)
+is published so that a future Lean formalization team can clone this repository,
+fill in the `sorry` placeholders, and produce a verified Lean proof.
 
-## This scaffold
-This Lean 4.20 file captures the statement of the partition regularity of ω²
-(an outer, abstract statement) using `Finset ℕ` as a finite carrier. The
-main theorem is left as `sorry` and is to be filled in after a careful
-paper-based argument is drafted.
+**This is NOT a Lean proof.** Every `theorem` in `JSP479.lean`
+ends with `:= by sorry`. Per the JSP `docs/verification.md` policy:
 
-## Build
+> A Lean submission without the complete proof is invalid and will not be accepted.
+
+## Files
+
 ```
-cd D:\evox-main\JustinSunPrize\jsp-479-ordinal-ramsey
+JSP479.lean    -- Outer statement with `sorry`
+README.md              -- This file
+lakefile.toml          -- Lean 4 build config (lake)
+lean-toolchain.json     -- Pinned toolchain: Lean v4.20.0
+lake-manifest.json     -- Pinned dependencies: mathlib v4.20.0
+.gitignore             -- Excludes `.lake/` build cache
+```
+
+## Build (to verify the scaffold compiles)
+
+```sh
 lake build
 ```
+
+## Math content
+
+Outer statement: Specker 1957 ordinal partition relation
+
+The Lean file states the outer theorem in a form suitable for filling in with
+Mathlib lemmas. To make this a complete Lean proof, a team would need to:
+
+1. Port the corresponding published paper (e.g. Schimmerling (2010, Ann. Pure Appl. Logic 1195-1215)).
+2. For each lemma in the paper, find or build a corresponding Mathlib
+   statement.
+3. Replace `sorry` with the corresponding Lean tactic proof.
+
+## References
+
+- Mathematical proof: see the publication reference cited above
+- Upstream JSP catalog: https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0401-0500.md#JSP-000479
+- Attribution policy: https://github.com/TheJustinSunPrize/awards/blob/main/docs/attribution.md
+
+## Submission path
+
+To claim the bounty for JSP-000479, the Lean author (or a contributor with
+attributable credit on the Lean repo) must:
+
+1. Fill the `sorry` in `JSP479.lean` and verify the proof with
+   `lake build`.
+2. Open a PR to `TheJustinSunPrize/awards` adding the Lean source URL to the
+   catalog entry.
+3. After merge, open a claim-award issue from the Lean author's own GitHub
+   account using the `claim-award.yml` template.
+4. Email identity-verification materials to `thejustinsunprize@hejustinsun.com`.
+
+None of these steps can be automated from an agent sandbox.
