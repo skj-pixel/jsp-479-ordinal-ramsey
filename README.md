@@ -2,8 +2,8 @@
 
 > **Problem (upstream JSP-000479)**: Does every red-blue coloring of pairs from the prescribed countable ordinal contain a red clique of the same order type or a blue triangle?
 > **Solver**: Schimmerling (2010, Ann. Pure Appl. Logic 1195-1215)
-> **JSP bounty**: USD $250
-> **Upstream status** ([TheJustinSunPrize/awards](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0401-0500.md#JSP-000479)): **Solved, Lean proof: No, Eligible to claim: No**
+> **JSP bounty**: USD $250 (per upstream catalog [TheJustinSunPrize/awards](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0401-0500.md#JSP-000479))
+> **Upstream status**: **Solved, Lean proof: No, Eligible to claim: No**
 
 ## What this repository is
 
@@ -13,19 +13,19 @@ is published so that a future Lean formalization team can clone this repository,
 fill in the `sorry` placeholders, and produce a verified Lean proof.
 
 **This is NOT a Lean proof.** Every `theorem` in `JSP479.lean`
-ends with `:= by sorry`. Per the JSP `docs/verification.md` policy:
+ends with `:= by sorry` or similar. Per the JSP `docs/verification.md` policy:
 
 > A Lean submission without the complete proof is invalid and will not be accepted.
 
 ## Files
 
 ```
-JSP479.lean    -- Outer statement with `sorry`
-README.md              -- This file
-lakefile.toml          -- Lean 4 build config (lake)
-lean-toolchain.json     -- Pinned toolchain: Lean v4.20.0
-lake-manifest.json     -- Pinned dependencies: mathlib v4.20.0
-.gitignore             -- Excludes `.lake/` build cache
+JSP479.lean       -- Outer statement with `sorry`
+README.md                  -- This file
+lakefile.toml              -- Lean 4 build config (lake)
+lake-manifest.json         -- Pinned dependencies: mathlib v4.20.0
+lean-toolchain / .json     -- Pinned toolchain: Lean v4.20.0
+.gitignore                 -- Excludes `.lake/` build cache
 ```
 
 ## Build (to verify the scaffold compiles)
@@ -66,3 +66,8 @@ attributable credit on the Lean repo) must:
 4. Email identity-verification materials to `thejustinsunprize@hejustinsun.com`.
 
 None of these steps can be automated from an agent sandbox.
+
+## Disclaimer
+
+This repository is published as honest **research infrastructure**. It does
+not constitute a Lean proof, an attribution claim, or a JSP submission.
